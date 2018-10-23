@@ -91,7 +91,7 @@ internal class FieldBinding(
       name: String
     ): Field {
       try {
-        return builderType.getField(name)
+        return builderType.getDeclaredField(name)
       } catch (e: NoSuchFieldException) {
         throw AssertionError("No builder field ${builderType.simpleName}#$name")
       }
